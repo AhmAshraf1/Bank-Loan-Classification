@@ -6,12 +6,12 @@ import pandas as pd
 # Page config
 st.set_page_config(
     page_title="Bank Loan Classification",
-    page_icon="/Users/ahmedashraf/Downloads/image.jpg",
+    page_icon="images/image.jpg",
 )
 
 # Page title
 st.title('Bank Loan - Loan Prediction')
-st.image('/Users/ahmedashraf/Downloads/image.jpg')
+st.image('images/image.jpg')
 st.write("\n\n")
 
 st.markdown(
@@ -21,7 +21,7 @@ st.markdown(
 )
 
 # Load the model
-with open('/Users/ahmedashraf/Documents/AI roadmaps & Training/IEEE ManCSC/Bank Loan Status Dataset/model.pkl', 'rb') as model_file:
+with open('model/model.pkl', 'rb') as model_file:
     model = pickle.load(model_file)
 
 # Streamlit interface to input data
@@ -84,4 +84,3 @@ if st.button('Predict'):
                home_ownership, purpose, monthly_debt, years_of_credit_history, no_of_open_accounts,
                no_of_credit_problems, current_credit_balance, max_open_credit, bankruptcies, tax_liens)
     st.success(predict)
-    
