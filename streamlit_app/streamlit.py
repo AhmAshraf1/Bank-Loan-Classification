@@ -56,6 +56,38 @@ def prediction(current_loan_amount, term, credit_score, annual_income, years_in_
                home_ownership, purpose, monthly_debt, years_of_credit_history, no_of_open_accounts,
                no_of_credit_problems, current_credit_balance, max_open_credit, bankruptcies, tax_liens):
 
+    if term == "Short Term":
+        term = 1
+    else:
+        term = 0
+
+    if years_in_current_job == "0-1 year":
+        years_in_current_job = 0
+    elif years_in_current_job == "2-3 years":
+        years_in_current_job = 2
+    elif years_in_current_job == "4-6 years":
+        years_in_current_job = 3
+    elif years_in_current_job == "7-9 years":
+        years_in_current_job = 4
+    else:
+        years_in_current_job = 1
+
+    if home_ownership == "Home Mortgage":
+        home_ownership = 0
+    elif home_ownership == "Own Home":
+        home_ownership = 1
+    else:
+        home_ownership = 2
+
+    if purpose == "Business Loan":
+        purpose = 0
+    elif purpose == "Debt Consolidation":
+        purpose = 1
+    elif purpose == "Other":
+        purpose = 2
+    else:
+        purpose = 3
+
     # Create a df with input data
     df_input = pd.DataFrame({
         'Current Loan Amount': [current_loan_amount],
@@ -84,13 +116,16 @@ def prediction(current_loan_amount, term, credit_score, annual_income, years_in_
     return prediction, df_input
 
 
-
-
 # Botton to predict
 if st.button('Predict'):
-    predict, df_input = prediction(current_loan_amount, term, credit_score, annual_income, years_in_current_job,
-                                   home_ownership, purpose, monthly_debt, years_of_credit_history, no_of_open_accounts,
-                                   no_of_credit_problems, current_credit_balance, max_open_credit, bankruptcies,
-                                   tax_liens)
-    st.write(df_input)
+    # predict, df_input = prediction(current_loan_amount, term, credit_score, annual_income, years_in_current_job,
+    #                                home_ownership, purpose, monthly_debt, years_of_credit_history, no_of_open_accounts,
+    #                                no_of_credit_problems, current_credit_balance, max_open_credit, bankruptcies,
+    #                                tax_liens)
+    # st.write(df_input)
+
+    predict = prediction(current_loan_amount, term, credit_score, annual_income, years_in_current_job,
+                         home_ownership, purpose, monthly_debt, years_of_credit_history, no_of_open_accounts,
+                         no_of_credit_problems, current_credit_balance, max_open_credit, bankruptcies,
+                         tax_liens)
     st.success(predict)
