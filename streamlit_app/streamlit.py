@@ -43,8 +43,8 @@ with col2:
     no_of_open_accounts = st.number_input(label='Number of open accounts')
 
 with col3:
-    no_of_credit_problems = st.number_input(label='Number of credit problems', options=["0", "1", "2", "3", "4", "5",
-                                                                                        "6", "7"])
+    no_of_credit_problems = st.selectbox(label='Number of credit problems', options=["0", "1", "2", "3", "4", "5", "6",
+                                                                                     "7"])
     current_credit_balance = st.number_input(label='Current Credit Balance')
     max_open_credit = st.number_input(label='Maximum open credit')
     bankruptcies = st.selectbox(label='Bankruptcies', options=["0", "1", "2", "3", "4", "5"])
