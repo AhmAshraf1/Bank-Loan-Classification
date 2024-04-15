@@ -2,7 +2,6 @@ import pickle
 import streamlit as st
 import pandas as pd
 
-
 # Page config
 st.set_page_config(
     page_title="Bank Loan Classification",
@@ -16,7 +15,8 @@ st.write("\n\n")
 
 st.markdown(
     """
-    This app aims to assist in classifying bank loan, thereby reducing the time required to analyze machine problems. It enables the analysis of sensor data to classify failures swiftly and expedite the troubleshooting process.    
+    This app aims to assist in predicting bank loan between being Charged Off and Fully Paid
+    , thereby reducing the time required to analyze machine problems.
     """
 )
 
@@ -50,10 +50,10 @@ with col3:
     bankruptcies = st.selectbox(label='Bankruptcies', options=["0", "1", "2", "3", "4", "5"])
     tax_liens = st.selectbox(label='Tax Liens', options=["0", "1", "2", "3", "4", "5", "6"])
 
+
 # Function to predict the input
 def prediction(current_loan_amount, term, credit_score, annual_income, years_in_current_job,
-               home_ownership, purpose, monthly_debt, years_of_credit_history,
-               no_of_open_accounts,
+               home_ownership, purpose, monthly_debt, years_of_credit_history, no_of_open_accounts,
                no_of_credit_problems, current_credit_balance, max_open_credit, bankruptcies, tax_liens):
     # Create a df with input data
     df_input = pd.DataFrame({
@@ -66,12 +66,12 @@ def prediction(current_loan_amount, term, credit_score, annual_income, years_in_
         'Purpose': [purpose],
         "Monthly Debt": [monthly_debt],
         'Years of Credit History': [years_of_credit_history],
-        'Number of Credit Problems': [no_of_credit_problems],
         'Number of Open Accounts': [no_of_open_accounts],
+        'Number of Credit Problems': [no_of_credit_problems],
         'Current Credit Balance': [current_credit_balance],
         'Maximum Open Credit': [max_open_credit],
         'Bankruptcies': [bankruptcies],
-        'Tax Liens': [tax_liens],
+        'Tax Liens': [tax_liens]
     })
 
     prediction = model.predict(df_input)
@@ -81,6 +81,6 @@ def prediction(current_loan_amount, term, credit_score, annual_income, years_in_
 # Botton to predict
 if st.button('Predict'):
     predict = prediction(current_loan_amount, term, credit_score, annual_income, years_in_current_job,
-               home_ownership, purpose, monthly_debt, years_of_credit_history, no_of_open_accounts,
-               no_of_credit_problems, current_credit_balance, max_open_credit, bankruptcies, tax_liens)
+                         home_ownership, purpose, monthly_debt, years_of_credit_history, no_of_open_accounts,
+                         no_of_credit_problems, current_credit_balance, max_open_credit, bankruptcies, tax_liens)
     st.success(predict)
