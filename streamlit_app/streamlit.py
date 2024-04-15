@@ -84,12 +84,13 @@ def prediction(current_loan_amount, term, credit_score, annual_income, years_in_
     return prediction, df_input
 
 
-predict, df_input = prediction(current_loan_amount, term, credit_score, annual_income, years_in_current_job,
-                         home_ownership, purpose, monthly_debt, years_of_credit_history, no_of_open_accounts,
-                         no_of_credit_problems, current_credit_balance, max_open_credit, bankruptcies, tax_liens)
+
 
 # Botton to predict
 if st.button('Predict'):
+    predict, df_input = prediction(current_loan_amount, term, credit_score, annual_income, years_in_current_job,
+                                   home_ownership, purpose, monthly_debt, years_of_credit_history, no_of_open_accounts,
+                                   no_of_credit_problems, current_credit_balance, max_open_credit, bankruptcies,
+                                   tax_liens)
     st.write(df_input)
-
     st.success(predict)
