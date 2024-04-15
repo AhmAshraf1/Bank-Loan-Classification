@@ -55,6 +55,7 @@ with col3:
 def prediction(current_loan_amount, term, credit_score, annual_income, years_in_current_job,
                home_ownership, purpose, monthly_debt, years_of_credit_history, no_of_open_accounts,
                no_of_credit_problems, current_credit_balance, max_open_credit, bankruptcies, tax_liens):
+
     # Create a df with input data
     df_input = pd.DataFrame({
         'Current Loan Amount': [current_loan_amount],
@@ -71,10 +72,17 @@ def prediction(current_loan_amount, term, credit_score, annual_income, years_in_
         'Current Credit Balance': [current_credit_balance],
         'Maximum Open Credit': [max_open_credit],
         'Bankruptcies': [bankruptcies],
-        'Tax Liens': [tax_liens]
+        'Tax Liens': [tax_liens],
     })
 
-    prediction = model.predict(df_input)
+    input_array = df_input.values
+
+    prediction = model.predict(input_array)
+
+    if prediction[0] == 0:
+        prediction = "Charged Off"
+    else:
+        prediction = "Fully Paid"
     return prediction
 
 
