@@ -40,7 +40,7 @@ with col2:
     purpose = st.selectbox(label='Loan Purpose', options=["Personal", "Debt Consolidation", "Business Loan", "Other"])
     monthly_debt = st.number_input(label='Monthly Debt')
     years_of_credit_history = st.number_input(label='Years of Credit History')
-    no_of_open_accounts = st.selectbox(label='Number of open accounts')
+    no_of_open_accounts = st.number_input(label='Number of open accounts')
 
 with col3:
     no_of_credit_problems = st.number_input(label='Number of credit problems', options=["0", "1", "2", "3", "4", "5",
