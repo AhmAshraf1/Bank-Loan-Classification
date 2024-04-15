@@ -75,9 +75,7 @@ def prediction(current_loan_amount, term, credit_score, annual_income, years_in_
         'Tax Liens': [tax_liens],
     })
 
-    input_array = df_input.values
-
-    prediction = model.predict(input_array)
+    prediction = model.predict(df_input)
 
     if prediction[0] == 0:
         prediction = "Charged Off"
