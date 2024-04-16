@@ -9,11 +9,11 @@ Bank Loan Status via Classification Algorithms which helps in predicting if your
 ## 2- Dataset :
 - The dataset is two csv files one for train algorithms to find the best one and the other for testing them.
 - Each file contains 19 columns & more than 10k rows
-- Here is a link where you can get the data: **[Dataset Source](#https://www.kaggle.com/datasets/zaurbegiev/my-dataset)**
+- Here is a link where you can get the data: **[Dataset Source](https://www.kaggle.com/datasets/zaurbegiev/my-dataset)**
 
 ## 3- Notebook:
 - My testing environment for different algorithms using different metrics and compare between them to find the best one before deployment
-- Here is a link where you can find the notebook: **[Kaggle Notebook](#https://www.kaggle.com/code/ahmedashrafhelmi/bank-loan-classification-with-f1-score-0-911)**
+- Here is a link where you can find the notebook: **[Kaggle Notebook](https://www.kaggle.com/code/ahmedashrafhelmi/bank-loan-classification-with-f1-score-0-911)**
 
 ## 4- Steps
 - Get an overview about the data
