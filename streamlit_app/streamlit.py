@@ -6,6 +6,7 @@ import pandas as pd
 st.set_page_config(
     page_title="Bank Loan Classification",
     page_icon="images/image.jpg",
+    layout="wide",
 )
 
 # Page title
@@ -122,5 +123,5 @@ if st.button('Predict'):
                          home_ownership, purpose, monthly_debt, years_of_credit_history, no_of_open_accounts,
                          no_of_credit_problems, current_credit_balance, max_open_credit, bankruptcies,
                          tax_liens)
-    st.write("Your Bank Loan is ")
+    st.write("Your Bank Loan is {}".format(predict))
     st.success(predict)
