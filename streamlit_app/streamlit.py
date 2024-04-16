@@ -122,4 +122,4 @@ if st.button('Predict'):
                          home_ownership, purpose, monthly_debt, years_of_credit_history, no_of_open_accounts,
                          no_of_credit_problems, current_credit_balance, max_open_credit, bankruptcies,
                          tax_liens)
-    st.success(predict)
+    st.success("Your Bank Loan is ", predict)
