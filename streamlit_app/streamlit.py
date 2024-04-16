@@ -6,18 +6,17 @@ import pandas as pd
 st.set_page_config(
     page_title="Bank Loan Classification",
     page_icon="images/image.jpg",
-    layout="wide",
+    # layout="wide",
 )
 
 # Page title
-st.title('Bank Loan - Loan Prediction')
+st.title('Bank Loan Status Prediction')
 st.image('images/image.jpg')
 st.write("\n\n")
 
 st.markdown(
     """
-    This app aims to assist in predicting bank loan between being Charged Off and Fully Paid
-    , thereby reducing the time required to analyze machine problems.
+    This app aims to assist in predicting bank loan status if being Charged Off or Fully Paid
     """
 )
 
